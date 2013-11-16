@@ -10,7 +10,9 @@
     };
 
     Cycler.prototype.moveDown = function() {
-      this.selectionId = this.selectionId || -1;
+      if (this.selectionId === undefined) {
+        this.selectionId = -1;
+      }
 
       if (this.selectionId === this.things.length - 1) {
         return this.selectionId = 0;
@@ -20,7 +22,9 @@
     };
 
     Cycler.prototype.moveUp = function() {
-      this.selectionId = this.selectionId || this.things.length;
+      if (this.selectionId === undefined) {
+        this.selectionId = this.things.length;
+      }
 
       if (this.selectionId === 0) {
         return this.selectionId = this.things.length - 1;

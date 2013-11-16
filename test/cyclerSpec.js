@@ -24,7 +24,8 @@
         cycler.moveDown();
         cycler.moveDown();
         cycler.moveDown();
-        cycler.current().should.equal("one");
+        cycler.moveDown();
+        cycler.current().should.equal("two");
       });
     });
 
@@ -41,7 +42,8 @@
         cycler.moveUp();
         cycler.moveUp();
         cycler.moveUp();
-        cycler.current().should.equal("three");
+        cycler.moveUp();
+        cycler.current().should.equal("two");
       });
     });
   });
