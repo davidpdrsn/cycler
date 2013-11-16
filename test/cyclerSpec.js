@@ -6,20 +6,21 @@
       cycler.things.should.equal(things);
     });
 
-    it('has a selection', function() {
+    it('starts with selecting nothing', function() {
       var cycler = new Cycler(["one", "two", "three"]);
-      cycler.current().should.equal("one");
+      expect(cycler.current()).toBe(undefined);
     });
 
     describe('#moveDown', function() {
       it('can move the selection up', function() {
         var cycler = new Cycler(["one", "two", "three"]);
         cycler.moveDown();
-        cycler.current().should.equal("two");
+        cycler.current().should.equal("one");
       });
 
       it('cycles back around', function() {
         var cycler = new Cycler(["one", "two", "three"]);
+        cycler.moveDown();
         cycler.moveDown();
         cycler.moveDown();
         cycler.moveDown();
@@ -39,7 +40,8 @@
         cycler.moveUp();
         cycler.moveUp();
         cycler.moveUp();
-        cycler.current().should.equal("one");
+        cycler.moveUp();
+        cycler.current().should.equal("three");
       });
     });
   });

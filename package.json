@@ -1,6 +1,6 @@
 {
   "name": "cycler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Useful for cycling through a list of things for example using the keyboard",
   "main": "src/cycler.js",
   "author": "David Pedersen <david.pdrsn@gmail.com>",

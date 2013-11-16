@@ -2,7 +2,7 @@
   this.Cycler = (function() {
     function Cycler(things) {
       this.things = things;
-      this.selectionId = 0;
+      this.selectionId = undefined;
     }
 
     Cycler.prototype.current = function() {
@@ -10,6 +10,8 @@
     };
 
     Cycler.prototype.moveDown = function() {
+      this.selectionId = this.selectionId || -1;
+
       if (this.selectionId === this.things.length - 1) {
         return this.selectionId = 0;
       } else {
@@ -18,6 +20,8 @@
     };
 
     Cycler.prototype.moveUp = function() {
+      this.selectionId = this.selectionId || this.things.length;
+
       if (this.selectionId === 0) {
         return this.selectionId = this.things.length - 1;
       } else {
