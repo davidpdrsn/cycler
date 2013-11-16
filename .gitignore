@@ -48,3 +48,5 @@ build/config/buildinfo.properties
 /log/*.log
 /tmp
 /bin
+
+node_modules
